@@ -9,7 +9,6 @@ DROP TABLE Payment CASCADE CONSTRAINTS;
 
 CREATE TABLE Customer (
     cusID NUMBER(4),
-    
     cusFName VARCHAR2(30),
     cusLName VARCHAR2(30),
     cusIC VARCHAR2(14) CHECK (REGEXP_LIKE(cusIC,'^[0-9]{6}-[0-9]{2}-[0-9]{4}$')),
@@ -21,7 +20,6 @@ CREATE TABLE Customer (
     city VARCHAR2(50) NOT NULL,
     cityState VARCHAR2(50) NOT NULL,
     country VARCHAR2(50) DEFAULT 'Malaysia',
-
     cusEmail VARCHAR2(50),
     CONSTRAINT Customer_cusID_PK PRIMARY KEY(cusID),
     CONSTRAINT Customer_cusEmail_UK UNIQUE(cusEmail),
