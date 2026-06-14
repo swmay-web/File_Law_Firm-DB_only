@@ -1,12 +1,12 @@
 SET DEFINE OFF;
+DROP TABLE Reminder CASCADE CONSTRAINTS;
+DROP TABLE Payment CASCADE CONSTRAINTS;
+DROP TABLE CustomerCase CASCADE CONSTRAINTS;
+DROP TABLE Document CASCADE CONSTRAINTS;
+DROP TABLE Cases CASCADE CONSTRAINTS;
 DROP TABLE Customer CASCADE CONSTRAINTS;
 DROP TABLE Lawyer CASCADE CONSTRAINTS;
 DROP TABLE CaseType CASCADE CONSTRAINTS;
-DROP TABLE Cases CASCADE CONSTRAINTS;
-DROP TABLE CustomerCase CASCADE CONSTRAINTS;
-DROP TABLE Document CASCADE CONSTRAINTS;
-DROP TABLE Reminder CASCADE CONSTRAINTS;
-DROP TABLE Payment CASCADE CONSTRAINTS;
 
 CREATE TABLE Customer (
     cusID NUMBER(4),
@@ -163,12 +163,23 @@ INSERT INTO CaseType VALUES (3,'Family');
 INSERT INTO CaseType VALUES (4,'Corporate');
 
 --create data for cases --
-INSERT INTO Cases VALUES(1, 2, 'PCCI/LML/SPA/001/2026', 2, 'SPA', TO_DATE('03-05-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
-INSERT INTO Cases VALUES(2, 1, 'PCCI/AM/LA/001/2026', 2, 'LA', TO_DATE('12-01-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
-INSERT INTO Cases VALUES(3, 3, 'PCCI/AD/DIV/001/2025', 1, 'DIV', TO_DATE('13-2-2025', 'DD-MM-YYYY'), NULL, 'OPEN');
-INSERT INTO Cases VALUES(4, 2, 'PCCI/CAG/D/001/2026', 3, 'D', TO_DATE('03-01-2026', 'DD-MM-YYYY'), TO_DATE('03-03-2026', 'DD-MM-YYYY'), 'CLOSED');
-INSERT INTO Cases VALUES(5, 2, 'PCCI/LBR/LPPSA/023/2026', 3, 'D', TO_DATE('13-2-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
-INSERT INTO Cases VALUES(6, 2, 'PCCI/GSK/R&R/001/2025', 3, 'R&R', TO_DATE('03-12-2025', 'DD-MM-YYYY'), TO_DATE('03-03-2026', 'DD-MM-YYYY'), 'CLOSED');
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase)
+VALUES(1, 2, 'PCCI/LML/SPA/001/2026', 2, 'SPA', TO_DATE('03-05-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
+
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase)
+VALUES(2, 1, 'PCCI/AM/LA/001/2026', 2, 'LA', TO_DATE('12-01-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
+
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase)
+VALUES(3, 3, 'PCCI/AD/DIV/001/2025', 1, 'DIV', TO_DATE('13-2-2025', 'DD-MM-YYYY'), NULL, 'OPEN');
+
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase) 
+VALUES(4, 2, 'PCCI/CAG/D/001/2026', 3, 'D', TO_DATE('03-01-2026', 'DD-MM-YYYY'), TO_DATE('03-03-2026', 'DD-MM-YYYY'), 'CLOSED');
+
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase) 
+VALUES(5, 2, 'PCCI/LBR/LPPSA/023/2026', 3, 'D', TO_DATE('13-2-2026', 'DD-MM-YYYY'), NULL, 'OPEN');
+
+INSERT INTO Cases (caseID, caseTypeID, caseNo, lawID, caseTitle, opendate, closedate, statusCase) 
+VALUES(6, 2, 'PCCI/GSK/R&R/001/2025', 3, 'R&R', TO_DATE('03-12-2025', 'DD-MM-YYYY'), TO_DATE('03-03-2026', 'DD-MM-YYYY'), 'CLOSED');
 
 --create data for customercase
 INSERT INTO CustomerCase VALUES(1, 1, 1, 'CUSTOMER');
@@ -177,7 +188,7 @@ INSERT INTO CustomerCase VALUES(3, 7, 2, 'OTHER PARTY'); -- make other company n
 INSERT INTO CustomerCase VALUES(4, 3, 3, 'CUSTOMER');
 INSERT INTO CustomerCase VALUES(5, 4, 4, 'CUSTOMER');
 INSERT INTO CustomerCase VALUES(6, 4, 5, 'CUSTOMER');
-INSERT INTO CustomerCase VALUES(7, 5, 7, 'CUSTOMER');
+INSERT INTO CustomerCase VALUES(7, 5, 6, 'CUSTOMER');
 
 --create data for Document--
 INSERT INTO Document VALUES (1, 1, 'PDF', 'AGREEMENT', TO_DATE('01-01-2026', 'DD-MM-YYYY'));
