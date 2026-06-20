@@ -1,5 +1,5 @@
  A Law Firm Database
-----------------------
+ 
 A database system designed for a law firm to manage:
 
 - Customers
@@ -9,8 +9,8 @@ A database system designed for a law firm to manage:
 - Documents
 - Reminders
 - Payments
-**
- Features**
+
+**Features**
 
 - Customer management
 - Case tracking
@@ -18,13 +18,13 @@ A database system designed for a law firm to manage:
 - Payment records
 - Reminder system
 
-** Technologies**
+**Technologies**
 
 - Oracle SQL
 - Relational Database Design
 - ERD Design
 
-** Tables**
+**Tables**
 
 1. Customer
 2. Lawyer
