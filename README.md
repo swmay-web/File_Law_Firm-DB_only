@@ -1,5 +1,5 @@
-# A Law Firm Database
-
+ A Law Firm Database
+----------------------
 A database system designed for a law firm to manage:
 
 - Customers
@@ -35,5 +35,5 @@ A database system designed for a law firm to manage:
 7. Reminder
 8. Payment
 
-## Author
+- Author
 siew may
